@@ -1,0 +1,57 @@
+*{
+  background-color: #FF8911;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  
+  
+  
+}
+input{
+  height: 50px;
+  width: 50%;
+  font-size: x-large;
+  font-family: monospace;
+  border-color: rgb(241, 206, 206);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  outline: none;
+
+
+}
+
+button{
+  height: 58px;
+  width: 8%;
+  border-radius: 8%;
+  font-size: large;
+  font-family: monospace;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: rgb(160, 58, 58);
+  border-color: rgb(241, 206, 206);
+  cursor: pointer;
+}
+
+.videoContainer{
+  margin-top: 50px;
+  
+  
+}
+
+@media screen and (max-width: 480px) {
+  input{
+    
+   
+    font-size: medium;
+    width:300px;
+    height: 20px;
+  
+  
+  }
+  button{
+    height: 27px;
+    width: 150px;
+  }
+}
