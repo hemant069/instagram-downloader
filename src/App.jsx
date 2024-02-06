@@ -8,6 +8,7 @@ export const App = () => {
   const [input, setInput] = useState("");
   const [data, setData] = useState("");
   const [loader, setLoader] = useState(false);
+  const [error, setError] = useState("");
   const getVideo = async () => {
     const options = {
       method: "GET",
@@ -29,7 +30,11 @@ export const App = () => {
       setData(response?.data?.result[0]?.url);
       setLoader(false);
     } catch (error) {
-      console.error(error);
+      if (error.message == "Network Error") {
+        setError("Please Check You Internet Connection");
+      } else {
+        setError(error.response?.data?.message);
+      }
     }
   };
 
@@ -41,10 +46,18 @@ export const App = () => {
           onChange={(e) => setInput(e.target.value)}
           type="url"
         />
-        <button onClick={getVideo}>GET</button>
+        <button onClick={getVideo}>Download</button>
       </div>
       <div className="videoContainer">
-        {loader ? <p>loading</p> : data && <InstaVideo data={data} />}
+        {data ? (
+          loader ? (
+            <p>loading</p>
+          ) : (
+            data && <InstaVideo data={data} />
+          )
+        ) : (
+          <h3>{error}</h3>
+        )}
       </div>
     </>
   );

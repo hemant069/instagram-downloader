@@ -24,7 +24,7 @@ input{
 
 button{
   height: 58px;
-  width: 8%;
+  width: 15%;
   border-radius: 8%;
   font-size: large;
   font-family: monospace;
@@ -38,6 +38,11 @@ button{
   margin-top: 50px;
   
   
+}
+h3{
+  font-size: medium;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
 @media screen and (max-width: 480px) {
