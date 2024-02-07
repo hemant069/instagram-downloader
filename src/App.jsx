@@ -3,7 +3,6 @@ import "./App.css";
 
 import axios from "axios";
 import InstaVideo from "./InstaVideo";
-import dotenv from "dotenv";
 
 export const App = () => {
   const [input, setInput] = useState("");
@@ -13,13 +12,13 @@ export const App = () => {
   const getVideo = async () => {
     const options = {
       method: "GET",
-      url: import.meta.env.URL,
+      url: import.meta.env.VITE_URL,
       params: {
         url: `${input}`,
       },
       headers: {
-        "X-RapidAPI-Key": import.meta.env.Rapid_Key,
-        "X-RapidAPI-Host": import.meta.env.Rapid_Host,
+        "X-RapidAPI-Key": import.meta.env.VITE_Rapid_Key,
+        "X-RapidAPI-Host": import.meta.env.VITE_Rapid_Host,
       },
     };
 
