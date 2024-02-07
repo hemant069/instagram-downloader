@@ -3,6 +3,7 @@ import "./App.css";
 
 import axios from "axios";
 import InstaVideo from "./InstaVideo";
+import dotenv from "dotenv";
 
 export const App = () => {
   const [input, setInput] = useState("");
@@ -12,14 +13,13 @@ export const App = () => {
   const getVideo = async () => {
     const options = {
       method: "GET",
-      url: "https://instagram-post-reels-stories-downloader.p.rapidapi.com/instagram/",
+      url: import.meta.env.URL,
       params: {
         url: `${input}`,
       },
       headers: {
-        "X-RapidAPI-Key": "e2043c65b5msh085edeae6a080f3p129716jsnd1f6b3b7a79a",
-        "X-RapidAPI-Host":
-          "instagram-post-reels-stories-downloader.p.rapidapi.com",
+        "X-RapidAPI-Key": import.meta.env.Rapid_Key,
+        "X-RapidAPI-Host": import.meta.env.Rapid_Host,
       },
     };
 
